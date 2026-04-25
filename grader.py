@@ -1,19 +1,17 @@
-"""Grade problem solutions by running each .py once per test case.
+"""Grade problem solutions by running each .py once per problem.
 
-For each problem, the .py is invoked NUM_TEST_CASES times. A small wrapper
-counts how many input() calls each invocation makes, so the grader can
-advance the input pointer for the next case (this handles problems with
-variable-length input per case, like 25304).
+A single subprocess is launched per problem. Inside it, all NUM_TEST_CASES
+test cases are executed back-to-back via exec(), with stdout captured and
+input() patched so the grader can track how many lines each case consumed
+(needed for variable-length-input problems like 25304).
 
-Scoring is all-or-nothing: as soon as any test case fails (wrong output,
-runtime error, or timeout), the loop stops and the problem is marked
-0/NUM_TEST_CASES. If every case passes, the problem is NUM_TEST_CASES/NUM_TEST_CASES.
+A per-case timer kills the subprocess via os._exit if any single case runs
+longer than 10 seconds.
 
-When the failing case falls within VISIBLE_CASES, its input/expected/got are
-printed. Failures in cases beyond VISIBLE_CASES are hidden — only the case
-number is shown.
+Results are streamed back as JSON lines on stderr, one per case.
 """
 
+import json
 import os
 import subprocess
 import sys
@@ -21,7 +19,6 @@ from pathlib import Path
 
 PROBLEMS = [2480, 2576, 31428, 32642, 34543, 5575, 34750, 25304, 25704, 15593, 12000]
 NUM_TEST_CASES = 50
-VISIBLE_CASES = 5
 ROOT = Path(__file__).parent
 
 if os.name == "nt":
@@ -35,58 +32,84 @@ BOLD = "\033[1m"
 DIM = "\033[2m"
 RESET = "\033[0m"
 
-# Inline wrapper: runs a target .py and reports input() call count via stderr.
-RUNNER = r'''
-import builtins, sys
+# Runs all test cases for one .py in a single interpreter.
+# Each case gets a fresh globals dict, captured stdout, and a 10s kill timer.
+# Results are written as JSON to stderr: one __CASE__:{...} line per case.
+BATCH_RUNNER = r'''
+import builtins, io, json, os, sys, threading, traceback
+
 target = sys.argv[1]
-_real_input = builtins.input
-_count = 0
-def _counting_input(prompt=""):
-    global _count
-    line = _real_input(prompt)
-    _count += 1
-    return line
-builtins.input = _counting_input
-try:
-    with open(target, encoding="utf-8") as f:
-        code = f.read()
-    exec(compile(code, target, "exec"), {"__name__": "__main__", "__file__": target})
-except SystemExit:
-    pass
-finally:
-    sys.stderr.write(f"\n__LINES_CONSUMED__:{_count}\n")
+num_cases = int(sys.argv[2])
+
+all_lines = sys.stdin.read().splitlines()
+pos = 0
+
+with open(target, encoding="utf-8") as f:
+    code = f.read()
+compiled = compile(code, target, "exec")
+
+for case_idx in range(num_cases):
+    case_start = pos
+    out_buf = io.StringIO()
+
+    def _patched_input(prompt=""):
+        global pos
+        if pos >= len(all_lines):
+            raise EOFError()
+        v = all_lines[pos]
+        pos += 1
+        return v
+
+    builtins.input = _patched_input
+    sys.stdout, old_stdout = out_buf, sys.stdout
+
+    timer = threading.Timer(10.0, lambda: os._exit(1))
+    timer.start()
+    error = None
+    try:
+        exec(compiled, {"__name__": "__main__", "__file__": target})
+    except SystemExit:
+        pass
+    except EOFError:
+        error = "EOFError: ran out of input"
+    except Exception:
+        error = traceback.format_exc().strip().splitlines()[-1]
+    finally:
+        timer.cancel()
+        sys.stdout = old_stdout
+
+    consumed = pos - case_start
+    sys.stderr.write("__CASE__:" + json.dumps({
+        "idx": case_idx,
+        "consumed": consumed,
+        "output": out_buf.getvalue(),
+        "error": error,
+    }) + "\n")
     sys.stderr.flush()
 '''
 
 
-def run_one_case(py, remaining_input):
+def run_problem(py, input_text, num_cases):
     try:
-        result = subprocess.run(
-            [sys.executable, "-c", RUNNER, str(py)],
-            input=remaining_input,
+        proc = subprocess.run(
+            [sys.executable, "-c", BATCH_RUNNER, str(py), str(num_cases)],
+            input=input_text,
             capture_output=True,
             text=True,
-            timeout=10,
+            timeout=10 * num_cases + 5,
         )
     except subprocess.TimeoutExpired:
-        return None, 0, "timeout after 10s"
+        return None
 
-    consumed = 0
-    other_err = []
-    for line in result.stderr.splitlines():
-        if line.startswith("__LINES_CONSUMED__:"):
+    results = {}
+    for line in proc.stderr.splitlines():
+        if line.startswith("__CASE__:"):
             try:
-                consumed = int(line.split(":", 1)[1])
-            except ValueError:
+                data = json.loads(line[9:])
+                results[data["idx"]] = data
+            except (json.JSONDecodeError, KeyError):
                 pass
-        elif line.strip():
-            other_err.append(line)
-
-    if result.returncode != 0:
-        msg = other_err[-1] if other_err else f"non-zero exit ({result.returncode})"
-        return None, consumed, msg
-
-    return result.stdout.splitlines(), consumed, None
+    return results
 
 
 def grade(problem):
@@ -106,12 +129,25 @@ def grade(problem):
     input_lines = input_text.splitlines()
     expected_lines = expected_text.splitlines()
 
+    case_results = run_problem(py, input_text, NUM_TEST_CASES)
+
     in_pos = 0
     out_pos = 0
 
     for i in range(NUM_TEST_CASES):
-        remaining = "\n".join(input_lines[in_pos:]) + "\n"
-        actual, consumed, err = run_one_case(py, remaining)
+        if case_results is None or i not in case_results:
+            fail = {
+                "case": i + 1,
+                "input": input_lines[in_pos : in_pos + 1],
+                "expected": None,
+                "actual": None,
+                "error": "timeout after 10s",
+            }
+            return ("FAIL", i, fail, None)
+
+        case = case_results[i]
+        consumed = case["consumed"]
+        err = case["error"]
 
         if err is not None:
             fail = {
@@ -121,8 +157,9 @@ def grade(problem):
                 "actual": None,
                 "error": err,
             }
-            return ("FAIL", 0, fail, None)
+            return ("FAIL", i, fail, None)
 
+        actual = case["output"].splitlines()
         expected_chunk = expected_lines[out_pos : out_pos + len(actual)]
         if actual != expected_chunk:
             fail = {
@@ -132,7 +169,7 @@ def grade(problem):
                 "actual": actual,
                 "error": None,
             }
-            return ("FAIL", 0, fail, None)
+            return ("FAIL", i, fail, None)
 
         in_pos += consumed
         out_pos += len(actual)
@@ -151,10 +188,6 @@ def print_block(label, lines, color, indent):
 
 def print_failure(fail):
     indent = "      "
-    if fail["case"] > VISIBLE_CASES:
-        print(f"    {RED}[X]{RESET} {BOLD}Test Case {fail['case']}{RESET} {DIM}(hidden){RESET}")
-        print()
-        return
     print(f"    {RED}[X]{RESET} {BOLD}Test Case {fail['case']}{RESET}")
     print_block("Input:", fail["input"], CYAN, indent)
     if fail["error"]:
@@ -170,8 +203,7 @@ def print_failure(fail):
 def main():
     print(
         f"\n{BOLD}Problem Grader{RESET}  "
-        f"{DIM}({NUM_TEST_CASES} cases/problem; cases 1-{VISIBLE_CASES} visible, "
-        f"{VISIBLE_CASES + 1}-{NUM_TEST_CASES} hidden){RESET}"
+        f"{DIM}({NUM_TEST_CASES} cases/problem){RESET}"
     )
     print(f"{DIM}{'=' * 70}{RESET}")
 
