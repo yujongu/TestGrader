@@ -14,19 +14,19 @@ Expected Result
 2
 
 Test Case 3
-
+1\nA\nA
 Expected Result
-
+1
 
 Test Case 4
-
+2\nC S\nI
 Expected Result
-
+0
 
 Test Case 5
-
+3\nI I I\nI
 Expected Result
-
+3
 
 """
 

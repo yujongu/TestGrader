@@ -1,28 +1,28 @@
 """
 Test Case 1
-
+200000
 Expected Result
-
+20000 180000
 
 Test Case 2
-
+800000
 Expected Result
-
+120000 680000
 
 Test Case 3
-
+50000
 Expected Result
-
+2500 47500
 
 Test Case 4
-
+60000
 Expected Result
-
+3000 57000
 
 Test Case 5
-
+70000
 Expected Result
-
+3500 66500
 
 """
 n = int(input())

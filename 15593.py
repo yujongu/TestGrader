@@ -8,24 +8,27 @@ Expected Result
 7
 
 Test Case 2
-
+1
+0 1000
 Expected Result
-
+0
 
 Test Case 3
-
+2
+0 499
+501 1000
 Expected Result
-
+499
 
 Test Case 4
-
+3\n0 100\n1 99\n2 98
 Expected Result
-
+100
 
 Test Case 5
-
+3\n0 50\n40 80\n70 100
 Expected Result
-
+80
 
 """
 N = int(input())

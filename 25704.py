@@ -12,19 +12,19 @@ Expected Result
 1000
 
 Test Case 3
-
+0\n100
 Expected Result
-
+100
 
 Test Case 4
-
+4\n50000
 Expected Result
-
+50000
 
 Test Case 5
-
+5\n100
 Expected Result
-
+0
 
 """
 N = int(input())
