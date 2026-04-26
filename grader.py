@@ -1,26 +1,10 @@
-"""Grade problem solutions by running each .py once per problem.
-
-Supports two input formats:
-1. _answer.txt: JSON file with per-case input/expected_output pairs
-2. _input.txt + _output.txt: Legacy format with concatenated inputs/outputs
-
-A single subprocess is launched per problem. Inside it, all NUM_TEST_CASES
-test cases are executed back-to-back via exec(), with stdout captured and
-input() patched.
-
-A per-case timer kills the subprocess via os._exit if any single case runs
-longer than 10 seconds.
-
-Results are streamed back as JSON lines on stderr, one per case.
-"""
-
 import json
 import os
 import subprocess
 import sys
 from pathlib import Path
 
-PROBLEMS = [2480, 2576, 31428, 32642, 34543, 5575, 34750, 25304, 25704, 15593, 12000]
+PROBLEMS = ["2480", "2576", "31428", "32642", "34543", "5575", "34750", "25304", "25704", "15593", "12000"]
 NUM_TEST_CASES = 50
 ROOT = Path(__file__).parent
 

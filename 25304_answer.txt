@@ -11,7 +11,7 @@
     "input": "5000\n1\n5000 1",
     "expected_output": "Yes"
   },
-  "TC4": {F
+  "TC4": {
     "input": "10000\n2\n5000 1\n5000 1",
     "expected_output": "Yes"
   },
