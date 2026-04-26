@@ -1,0 +1,202 @@
+{
+  "TC1": {
+    "input": "12\n77\n38\n41\n53\n92\n85",
+    "expected_output": "256\n41"
+  },
+  "TC2": {
+    "input": "2\n4\n20\n32\n6\n10\n8",
+    "expected_output": "-1"
+  },
+  "TC3": {
+    "input": "1\n3\n5\n7\n9\n11\n13",
+    "expected_output": "49\n1"
+  },
+  "TC4": {
+    "input": "2\n4\n6\n8\n10\n12\n14",
+    "expected_output": "-1"
+  },
+  "TC5": {
+    "input": "1\n1\n1\n1\n1\n1\n1",
+    "expected_output": "7\n1"
+  },
+  "TC6": {
+    "input": "99\n99\n99\n99\n99\n99\n99",
+    "expected_output": "693\n99"
+  },
+  "TC7": {
+    "input": "2\n2\n2\n2\n2\n2\n2",
+    "expected_output": "-1"
+  },
+  "TC8": {
+    "input": "1\n2\n2\n2\n2\n2\n2",
+    "expected_output": "1\n1"
+  },
+  "TC9": {
+    "input": "2\n2\n2\n2\n2\n2\n1",
+    "expected_output": "1\n1"
+  },
+  "TC10": {
+    "input": "2\n2\n2\n1\n2\n2\n2",
+    "expected_output": "1\n1"
+  },
+  "TC11": {
+    "input": "99\n2\n2\n2\n2\n2\n2",
+    "expected_output": "99\n99"
+  },
+  "TC12": {
+    "input": "2\n99\n2\n2\n2\n2\n2",
+    "expected_output": "99\n99"
+  },
+  "TC13": {
+    "input": "2\n2\n99\n2\n2\n2\n2",
+    "expected_output": "99\n99"
+  },
+  "TC14": {
+    "input": "2\n2\n2\n99\n2\n2\n2",
+    "expected_output": "99\n99"
+  },
+  "TC15": {
+    "input": "2\n2\n2\n2\n99\n2\n2",
+    "expected_output": "99\n99"
+  },
+  "TC16": {
+    "input": "2\n2\n2\n2\n2\n99\n2",
+    "expected_output": "99\n99"
+  },
+  "TC17": {
+    "input": "2\n2\n2\n2\n2\n2\n99",
+    "expected_output": "99\n99"
+  },
+  "TC18": {
+    "input": "13\n13\n13\n13\n14\n14\n14",
+    "expected_output": "52\n13"
+  },
+  "TC19": {
+    "input": "14\n14\n14\n13\n13\n13\n13",
+    "expected_output": "52\n13"
+  },
+  "TC20": {
+    "input": "25\n25\n25\n25\n25\n25\n26",
+    "expected_output": "150\n25"
+  },
+  "TC21": {
+    "input": "11\n22\n33\n44\n55\n66\n77",
+    "expected_output": "176\n11"
+  },
+  "TC22": {
+    "input": "98\n97\n96\n95\n94\n93\n92",
+    "expected_output": "285\n93"
+  },
+  "TC23": {
+    "input": "3\n5\n7\n9\n2\n4\n6",
+    "expected_output": "24\n3"
+  },
+  "TC24": {
+    "input": "2\n4\n6\n8\n1\n3\n5",
+    "expected_output": "9\n1"
+  },
+  "TC25": {
+    "input": "5\n4\n3\n2\n1\n98\n99",
+    "expected_output": "108\n1"
+  },
+  "TC26": {
+    "input": "99\n98\n1\n2\n3\n4\n5",
+    "expected_output": "108\n1"
+  },
+  "TC27": {
+    "input": "15\n17\n19\n21\n23\n25\n27",
+    "expected_output": "147\n15"
+  },
+  "TC28": {
+    "input": "27\n25\n23\n21\n19\n17\n15",
+    "expected_output": "147\n15"
+  },
+  "TC29": {
+    "input": "51\n51\n52\n52\n53\n53\n54",
+    "expected_output": "208\n51"
+  },
+  "TC30": {
+    "input": "81\n83\n85\n87\n89\n91\n93",
+    "expected_output": "609\n81"
+  },
+  "TC31": {
+    "input": "8\n18\n28\n38\n48\n58\n68",
+    "expected_output": "-1"
+  },
+  "TC32": {
+    "input": "7\n17\n27\n37\n47\n57\n67",
+    "expected_output": "259\n7"
+  },
+  "TC33": {
+    "input": "10\n20\n30\n40\n50\n60\n71",
+    "expected_output": "71\n71"
+  },
+  "TC34": {
+    "input": "11\n20\n30\n40\n50\n60\n71",
+    "expected_output": "82\n11"
+  },
+  "TC35": {
+    "input": "11\n21\n30\n40\n50\n60\n71",
+    "expected_output": "103\n11"
+  },
+  "TC36": {
+    "input": "11\n21\n31\n40\n50\n60\n71",
+    "expected_output": "134\n11"
+  },
+  "TC37": {
+    "input": "11\n21\n31\n41\n50\n60\n71",
+    "expected_output": "175\n11"
+  },
+  "TC38": {
+    "input": "11\n21\n31\n41\n51\n60\n71",
+    "expected_output": "226\n11"
+  },
+  "TC39": {
+    "input": "11\n21\n31\n41\n51\n61\n71",
+    "expected_output": "287\n11"
+  },
+  "TC40": {
+    "input": "10\n11\n10\n11\n10\n11\n10",
+    "expected_output": "33\n11"
+  },
+  "TC41": {
+    "input": "11\n10\n11\n10\n11\n10\n11",
+    "expected_output": "44\n11"
+  },
+  "TC42": {
+    "input": "49\n49\n49\n49\n50\n50\n50",
+    "expected_output": "196\n49"
+  },
+  "TC43": {
+    "input": "50\n50\n50\n50\n49\n49\n49",
+    "expected_output": "147\n49"
+  },
+  "TC44": {
+    "input": "1\n99\n2\n98\n3\n97\n4",
+    "expected_output": "200\n1"
+  },
+  "TC45": {
+    "input": "99\n1\n98\n2\n97\n3\n96",
+    "expected_output": "200\n1"
+  },
+  "TC46": {
+    "input": "23\n23\n23\n23\n23\n23\n23",
+    "expected_output": "161\n23"
+  },
+  "TC47": {
+    "input": "88\n88\n88\n88\n88\n88\n89",
+    "expected_output": "89\n89"
+  },
+  "TC48": {
+    "input": "89\n88\n88\n88\n88\n88\n88",
+    "expected_output": "89\n89"
+  },
+  "TC49": {
+    "input": "55\n66\n77\n88\n99\n12\n34",
+    "expected_output": "231\n55"
+  },
+  "TC50": {
+    "input": "12\n34\n56\n17\n19\n21\n23",
+    "expected_output": "80\n17"
+  }
+}

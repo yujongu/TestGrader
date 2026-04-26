@@ -1,11 +1,7 @@
 """
 Test Case 1
-3
-5 9
-1 4
-3 7
+
 Expected Result
-7
 
 Test Case 2
 

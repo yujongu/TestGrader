@@ -1,9 +1,12 @@
 """Grade problem solutions by running each .py once per problem.
 
+Supports two input formats:
+1. _answer.txt: JSON file with per-case input/expected_output pairs
+2. _input.txt + _output.txt: Legacy format with concatenated inputs/outputs
+
 A single subprocess is launched per problem. Inside it, all NUM_TEST_CASES
 test cases are executed back-to-back via exec(), with stdout captured and
-input() patched so the grader can track how many lines each case consumed
-(needed for variable-length-input problems like 25304).
+input() patched.
 
 A per-case timer kills the subprocess via os._exit if any single case runs
 longer than 10 seconds.
@@ -32,6 +35,7 @@ BOLD = "\033[1m"
 DIM = "\033[2m"
 RESET = "\033[0m"
 
+# Legacy batch runner for _input.txt + _output.txt format
 # Runs all test cases for one .py in a single interpreter.
 # Each case gets a fresh globals dict, captured stdout, and a 10s kill timer.
 # Results are written as JSON to stderr: one __CASE__:{...} line per case.
@@ -88,11 +92,69 @@ for case_idx in range(num_cases):
     sys.stderr.flush()
 '''
 
+# New batch runner for _answer.txt JSON format
+# Each case is independent with its own input. Compares output directly.
+BATCH_RUNNER_JSON = r'''
+import builtins, io, json, os, sys, threading, traceback
 
-def run_problem(py, input_text, num_cases):
+target = sys.argv[1]
+test_cases = json.loads(sys.stdin.read())
+
+with open(target, encoding="utf-8") as f:
+    code = f.read()
+compiled = compile(code, target, "exec")
+
+case_idx = 0
+for tc_name in sorted(test_cases.keys(), key=lambda x: int(x[2:])):
+    test_case = test_cases[tc_name]
+    input_lines = test_case["input"].splitlines()
+    out_buf = io.StringIO()
+
+    class InputReader:
+        def __init__(self, lines):
+            self.lines = lines
+            self.pos = 0
+        def __call__(self, prompt=""):
+            if self.pos >= len(self.lines):
+                raise EOFError()
+            v = self.lines[self.pos]
+            self.pos += 1
+            return v
+
+    input_reader = InputReader(input_lines)
+    builtins.input = input_reader
+    sys.stdout, old_stdout = out_buf, sys.stdout
+
+    timer = threading.Timer(10.0, lambda: os._exit(1))
+    timer.start()
+    error = None
+    try:
+        exec(compiled, {"__name__": "__main__", "__file__": target})
+    except SystemExit:
+        pass
+    except EOFError:
+        error = "EOFError: ran out of input"
+    except Exception:
+        error = traceback.format_exc().strip().splitlines()[-1]
+    finally:
+        timer.cancel()
+        sys.stdout = old_stdout
+
+    sys.stderr.write("__CASE__:" + json.dumps({
+        "idx": case_idx,
+        "output": out_buf.getvalue(),
+        "error": error,
+    }) + "\n")
+    sys.stderr.flush()
+    case_idx += 1
+'''
+
+
+def run_problem(py, input_text, num_cases, use_json=False):
+    runner = BATCH_RUNNER_JSON if use_json else BATCH_RUNNER
     try:
         proc = subprocess.run(
-            [sys.executable, "-c", BATCH_RUNNER, str(py), str(num_cases)],
+            [sys.executable, "-c", runner, str(py)],
             input=input_text,
             capture_output=True,
             text=True,
@@ -112,8 +174,75 @@ def run_problem(py, input_text, num_cases):
     return results
 
 
+def grade_with_json(problem, answer_data):
+    """Grade using _answer.txt JSON format."""
+    py = ROOT / f"{problem}.py"
+    if not py.exists():
+        return ("MISSING", 0, None, f"{py.name} not found")
+
+    case_results = run_problem(py, json.dumps(answer_data), len(answer_data), use_json=True)
+
+    for i, (tc_name, test_case) in enumerate(sorted(answer_data.items(), key=lambda x: int(x[0][2:]))):
+        if case_results is None or i not in case_results:
+            fail = {
+                "case": i + 1,
+                "input": test_case["input"].splitlines(),
+                "expected": None,
+                "actual": None,
+                "error": "timeout after 10s",
+            }
+            return ("FAIL", i, fail, None)
+
+        case = case_results[i]
+        err = case["error"]
+
+        if err is not None:
+            fail = {
+                "case": i + 1,
+                "input": test_case["input"].splitlines(),
+                "expected": None,
+                "actual": None,
+                "error": err,
+            }
+            return ("FAIL", i, fail, None)
+
+        actual = case["output"].rstrip("\n").split("\n") if case["output"].strip() else []
+        expected = test_case["expected_output"].rstrip("\n").split("\n") if test_case["expected_output"].strip() else []
+
+        if not actual:
+            fail = {
+                "case": i + 1,
+                "input": test_case["input"].splitlines(),
+                "expected": expected,
+                "actual": actual,
+                "error": "produced no output",
+            }
+            return ("FAIL", i, fail, None)
+
+        if actual != expected:
+            fail = {
+                "case": i + 1,
+                "input": test_case["input"].splitlines(),
+                "expected": expected,
+                "actual": actual,
+                "error": None,
+            }
+            return ("FAIL", i, fail, None)
+
+    return ("PASS", len(answer_data), None, None)
+
+
 def grade(problem):
     py = ROOT / f"{problem}.py"
+    answer_path = ROOT / f"{problem}_answer.txt"
+
+    if answer_path.exists():
+        try:
+            answer_data = json.loads(answer_path.read_text())
+            return grade_with_json(problem, answer_data)
+        except (json.JSONDecodeError, ValueError) as e:
+            return ("EMPTY", 0, None, f"invalid JSON in {answer_path.name}: {e}")
+
     inp = ROOT / f"{problem}_input.txt"
     expected_path = ROOT / f"{problem}_output.txt"
 
@@ -160,6 +289,16 @@ def grade(problem):
             return ("FAIL", i, fail, None)
 
         actual = case["output"].splitlines()
+        if not actual:
+            fail = {
+                "case": i + 1,
+                "input": input_lines[in_pos : in_pos + consumed],
+                "expected": expected_lines[out_pos : out_pos + 1] if out_pos < len(expected_lines) else [],
+                "actual": actual,
+                "error": "produced no output",
+            }
+            return ("FAIL", i, fail, None)
+
         expected_chunk = expected_lines[out_pos : out_pos + len(actual)]
         if actual != expected_chunk:
             fail = {

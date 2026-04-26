@@ -1,0 +1,202 @@
+{
+  "TC1": {
+    "input": "260000\n4\n20000 5\n30000 2\n10000 6\n5000 8",
+    "expected_output": "Yes"
+  },
+  "TC2": {
+    "input": "250000\n4\n20000 5\n30000 2\n10000 6\n5000 8",
+    "expected_output": "No"
+  },
+  "TC3": {
+    "input": "5000\n1\n5000 1",
+    "expected_output": "Yes"
+  },
+  "TC4": {F
+    "input": "10000\n2\n5000 1\n5000 1",
+    "expected_output": "Yes"
+  },
+  "TC5": {
+    "input": "15000\n3\n5000 1\n5000 1\n5000 1",
+    "expected_output": "Yes"
+  },
+  "TC6": {
+    "input": "20000\n4\n5000 1\n5000 1\n5000 1\n5000 1",
+    "expected_output": "Yes"
+  },
+  "TC7": {
+    "input": "25000\n5\n5000 1\n5000 1\n5000 1\n5000 1\n5000 1",
+    "expected_output": "Yes"
+  },
+  "TC8": {
+    "input": "500\n1\n50 10",
+    "expected_output": "Yes"
+  },
+  "TC9": {
+    "input": "1000\n2\n50 10\n50 10",
+    "expected_output": "Yes"
+  },
+  "TC10": {
+    "input": "1500\n3\n50 10\n50 10\n50 10",
+    "expected_output": "Yes"
+  },
+  "TC11": {
+    "input": "2000\n4\n50 10\n50 10\n50 10\n50 10",
+    "expected_output": "Yes"
+  },
+  "TC12": {
+    "input": "2500\n5\n50 10\n50 10\n50 10\n50 10\n50 10",
+    "expected_output": "Yes"
+  },
+  "TC13": {
+    "input": "100000000\n10\n1000000 10\n1000000 10\n1000000 10\n1000000 10\n1000000 10\n1000000 10\n1000000 10\n1000000 10\n1000000 10\n1000000 10",
+    "expected_output": "Yes"
+  },
+  "TC14": {
+    "input": "1000000\n1\n1000000 1",
+    "expected_output": "Yes"
+  },
+  "TC15": {
+    "input": "10000000\n1\n1000000 10",
+    "expected_output": "Yes"
+  },
+  "TC16": {
+    "input": "30\n3\n10 1\n10 1\n10 1",
+    "expected_output": "Yes"
+  },
+  "TC17": {
+    "input": "60\n3\n10 2\n10 2\n10 2",
+    "expected_output": "Yes"
+  },
+  "TC18": {
+    "input": "90\n3\n10 3\n10 3\n10 3",
+    "expected_output": "Yes"
+  },
+  "TC19": {
+    "input": "120\n3\n10 4\n10 4\n10 4",
+    "expected_output": "Yes"
+  },
+  "TC20": {
+    "input": "150\n3\n10 5\n10 5\n10 5",
+    "expected_output": "Yes"
+  },
+  "TC21": {
+    "input": "180\n3\n10 6\n10 6\n10 6",
+    "expected_output": "Yes"
+  },
+  "TC22": {
+    "input": "210\n3\n10 7\n10 7\n10 7",
+    "expected_output": "Yes"
+  },
+  "TC23": {
+    "input": "240\n3\n10 8\n10 8\n10 8",
+    "expected_output": "Yes"
+  },
+  "TC24": {
+    "input": "270\n3\n10 9\n10 9\n10 9",
+    "expected_output": "Yes"
+  },
+  "TC25": {
+    "input": "300\n3\n10 10\n10 10\n10 10",
+    "expected_output": "Yes"
+  },
+  "TC26": {
+    "input": "500\n2\n200 1\n300 1",
+    "expected_output": "Yes"
+  },
+  "TC27": {
+    "input": "5001\n1\n5000 1",
+    "expected_output": "No"
+  },
+  "TC28": {
+    "input": "4999\n1\n5000 1",
+    "expected_output": "No"
+  },
+  "TC29": {
+    "input": "10001\n2\n5000 1\n5000 1",
+    "expected_output": "No"
+  },
+  "TC30": {
+    "input": "9999\n2\n5000 1\n5000 1",
+    "expected_output": "No"
+  },
+  "TC31": {
+    "input": "15001\n3\n5000 1\n5000 1\n5000 1",
+    "expected_output": "No"
+  },
+  "TC32": {
+    "input": "14999\n3\n5000 1\n5000 1\n5000 1",
+    "expected_output": "No"
+  },
+  "TC33": {
+    "input": "20001\n4\n5000 1\n5000 1\n5000 1\n5000 1",
+    "expected_output": "No"
+  },
+  "TC34": {
+    "input": "19999\n4\n5000 1\n5000 1\n5000 1\n5000 1",
+    "expected_output": "No"
+  },
+  "TC35": {
+    "input": "25001\n5\n5000 1\n5000 1\n5000 1\n5000 1\n5000 1",
+    "expected_output": "No"
+  },
+  "TC36": {
+    "input": "24999\n5\n5000 1\n5000 1\n5000 1\n5000 1\n5000 1",
+    "expected_output": "No"
+  },
+  "TC37": {
+    "input": "501\n1\n50 10",
+    "expected_output": "No"
+  },
+  "TC38": {
+    "input": "499\n1\n50 10",
+    "expected_output": "No"
+  },
+  "TC39": {
+    "input": "1001\n2\n50 10\n50 10",
+    "expected_output": "No"
+  },
+  "TC40": {
+    "input": "999\n2\n50 10\n50 10",
+    "expected_output": "No"
+  },
+  "TC41": {
+    "input": "1501\n3\n50 10\n50 10\n50 10",
+    "expected_output": "No"
+  },
+  "TC42": {
+    "input": "1499\n3\n50 10\n50 10\n50 10",
+    "expected_output": "No"
+  },
+  "TC43": {
+    "input": "2001\n4\n50 10\n50 10\n50 10\n50 10",
+    "expected_output": "No"
+  },
+  "TC44": {
+    "input": "1999\n4\n50 10\n50 10\n50 10\n50 10",
+    "expected_output": "No"
+  },
+  "TC45": {
+    "input": "10000001\n10\n1000000 1\n1000000 1\n1000000 1\n1000000 1\n1000000 1\n1000000 1\n1000000 1\n1000000 1\n1000000 1\n1000000 1",
+    "expected_output": "No"
+  },
+  "TC46": {
+    "input": "9999999\n10\n1000000 1\n1000000 1\n1000000 1\n1000000 1\n1000000 1\n1000000 1\n1000000 1\n1000000 1\n1000000 1\n1000000 1",
+    "expected_output": "No"
+  },
+  "TC47": {
+    "input": "1\n1\n2 1",
+    "expected_output": "No"
+  },
+  "TC48": {
+    "input": "1000000000\n1\n1 1",
+    "expected_output": "No"
+  },
+  "TC49": {
+    "input": "500\n2\n200 1\n400 1",
+    "expected_output": "No"
+  },
+  "TC50": {
+    "input": "2\n1\n1 1",
+    "expected_output": "No"
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "TC1": {
+    "input": "5\n4\n7\n8\n6\n4",
+    "expected_output": "48"
+  },
+  "TC2": {
+    "input": "3\n1\n1\n1",
+    "expected_output": "3"
+  },
+  "TC3": {
+    "input": "3\n100\n1\n1",
+    "expected_output": "3"
+  },
+  "TC4": {
+    "input": "3\n1\n100\n1",
+    "expected_output": "3"
+  },
+  "TC5": {
+    "input": "3\n1\n1\n100",
+    "expected_output": "3"
+  },
+  "TC6": {
+    "input": "4\n10\n10\n10\n10",
+    "expected_output": "60"
+  },
+  "TC7": {
+    "input": "5\n1\n2\n3\n4\n5",
+    "expected_output": "25"
+  },
+  "TC8": {
+    "input": "5\n5\n4\n3\n2\n1",
+    "expected_output": "20"
+  },
+  "TC9": {
+    "input": "3\n2\n2\n2",
+    "expected_output": "6"
+  },
+  "TC10": {
+    "input": "3\n10\n20\n30",
+    "expected_output": "50"
+  },
+  "TC11": {
+    "input": "3\n30\n20\n10",
+    "expected_output": "40"
+  },
+  "TC12": {
+    "input": "4\n1\n2\n1\n2",
+    "expected_output": "8"
+  },
+  "TC13": {
+    "input": "4\n2\n1\n2\n1",
+    "expected_output": "8"
+  },
+  "TC14": {
+    "input": "4\n100\n100\n1\n1",
+    "expected_output": "105"
+  },
+  "TC15": {
+    "input": "4\n1\n1\n100\n100",
+    "expected_output": "105"
+  },
+  "TC16": {
+    "input": "5\n10\n1\n1\n1\n10",
+    "expected_output": "19"
+  },
+  "TC17": {
+    "input": "5\n2\n2\n2\n2\n2",
+    "expected_output": "20"
+  },
+  "TC18": {
+    "input": "6\n1\n1\n1\n1\n1\n1",
+    "expected_output": "15"
+  },
+  "TC19": {
+    "input": "7\n1\n1\n1\n1\n1\n1\n1",
+    "expected_output": "21"
+  },
+  "TC20": {
+    "input": "8\n1\n1\n1\n1\n1\n1\n1\n1",
+    "expected_output": "28"
+  },
+  "TC21": {
+    "input": "9\n1\n1\n1\n1\n1\n1\n1\n1\n1",
+    "expected_output": "36"
+  },
+  "TC22": {
+    "input": "10\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1",
+    "expected_output": "45"
+  },
+  "TC23": {
+    "input": "5\n100\n1\n1\n1\n1",
+    "expected_output": "10"
+  },
+  "TC24": {
+    "input": "5\n1\n100\n1\n1\n1",
+    "expected_output": "10"
+  },
+  "TC25": {
+    "input": "5\n1\n1\n100\n1\n1",
+    "expected_output": "10"
+  },
+  "TC26": {
+    "input": "5\n1\n1\n1\n100\n1",
+    "expected_output": "10"
+  },
+  "TC27": {
+    "input": "5\n1\n1\n1\n1\n100",
+    "expected_output": "10"
+  },
+  "TC28": {
+    "input": "4\n1\n2\n3\n4",
+    "expected_output": "12"
+  },
+  "TC29": {
+    "input": "4\n4\n3\n2\n1",
+    "expected_output": "10"
+  },
+  "TC30": {
+    "input": "3\n10\n10\n1",
+    "expected_output": "12"
+  },
+  "TC31": {
+    "input": "3\n1\n10\n10",
+    "expected_output": "12"
+  },
+  "TC32": {
+    "input": "3\n10\n1\n10",
+    "expected_output": "12"
+  },
+  "TC33": {
+    "input": "3\n50\n50\n50",
+    "expected_output": "150"
+  },
+  "TC34": {
+    "input": "3\n100\n100\n100",
+    "expected_output": "300"
+  },
+  "TC35": {
+    "input": "3\n99\n99\n99",
+    "expected_output": "297"
+  },
+  "TC36": {
+    "input": "3\n2\n3\n4",
+    "expected_output": "8"
+  },
+  "TC37": {
+    "input": "3\n4\n3\n2",
+    "expected_output": "7"
+  },
+  "TC38": {
+    "input": "3\n10\n100\n10",
+    "expected_output": "30"
+  },
+  "TC39": {
+    "input": "4\n10\n10\n10\n1",
+    "expected_output": "33"
+  },
+  "TC40": {
+    "input": "4\n1\n10\n10\n10",
+    "expected_output": "33"
+  },
+  "TC41": {
+    "input": "4\n10\n1\n10\n10",
+    "expected_output": "33"
+  },
+  "TC42": {
+    "input": "4\n10\n10\n1\n10",
+    "expected_output": "33"
+  },
+  "TC43": {
+    "input": "4\n5\n5\n5\n5",
+    "expected_output": "30"
+  },
+  "TC44": {
+    "input": "4\n100\n100\n100\n100",
+    "expected_output": "600"
+  },
+  "TC45": {
+    "input": "5\n10\n20\n30\n40\n50",
+    "expected_output": "250"
+  },
+  "TC46": {
+    "input": "5\n50\n40\n30\n20\n10",
+    "expected_output": "200"
+  },
+  "TC47": {
+    "input": "6\n10\n10\n10\n10\n10\n10",
+    "expected_output": "150"
+  },
+  "TC48": {
+    "input": "7\n2\n2\n2\n2\n2\n2\n2",
+    "expected_output": "42"
+  },
+  "TC49": {
+    "input": "3\n100\n100\n1",
+    "expected_output": "102"
+  },
+  "TC50": {
+    "input": "3\n1\n100\n100",
+    "expected_output": "102"
+  }
+}

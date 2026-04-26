@@ -1,0 +1,202 @@
+{
+  "TC1": {
+    "input": "12\n50000",
+    "expected_output": "45000"
+  },
+  "TC2": {
+    "input": "23\n3000",
+    "expected_output": "1000"
+  },
+  "TC3": {
+    "input": "0\n100",
+    "expected_output": "100"
+  },
+  "TC4": {
+    "input": "4\n50000",
+    "expected_output": "50000"
+  },
+  "TC5": {
+    "input": "5\n100",
+    "expected_output": "0"
+  },
+  "TC6": {
+    "input": "9\n500",
+    "expected_output": "0"
+  },
+  "TC7": {
+    "input": "7\n1000",
+    "expected_output": "500"
+  },
+  "TC8": {
+    "input": "6\n50000",
+    "expected_output": "49500"
+  },
+  "TC9": {
+    "input": "10\n100",
+    "expected_output": "0"
+  },
+  "TC10": {
+    "input": "14\n4000",
+    "expected_output": "3500"
+  },
+  "TC11": {
+    "input": "11\n5000",
+    "expected_output": "4500"
+  },
+  "TC12": {
+    "input": "12\n6000",
+    "expected_output": "5400"
+  },
+  "TC13": {
+    "input": "13\n50000",
+    "expected_output": "45000"
+  },
+  "TC14": {
+    "input": "15\n1000",
+    "expected_output": "0"
+  },
+  "TC15": {
+    "input": "16\n2000",
+    "expected_output": "0"
+  },
+  "TC16": {
+    "input": "19\n3000",
+    "expected_output": "1000"
+  },
+  "TC17": {
+    "input": "18\n19900",
+    "expected_output": "17900"
+  },
+  "TC18": {
+    "input": "17\n20000",
+    "expected_output": "18000"
+  },
+  "TC19": {
+    "input": "15\n20100",
+    "expected_output": "18090"
+  },
+  "TC20": {
+    "input": "19\n50000",
+    "expected_output": "45000"
+  },
+  "TC21": {
+    "input": "20\n1000",
+    "expected_output": "0"
+  },
+  "TC22": {
+    "input": "30\n2000",
+    "expected_output": "0"
+  },
+  "TC23": {
+    "input": "21\n7900",
+    "expected_output": "5900"
+  },
+  "TC24": {
+    "input": "25\n8000",
+    "expected_output": "6000"
+  },
+  "TC25": {
+    "input": "29\n8100",
+    "expected_output": "6075"
+  },
+  "TC26": {
+    "input": "22\n50000",
+    "expected_output": "37500"
+  },
+  "TC27": {
+    "input": "0\n50000",
+    "expected_output": "50000"
+  },
+  "TC28": {
+    "input": "30\n50000",
+    "expected_output": "37500"
+  },
+  "TC29": {
+    "input": "20\n100",
+    "expected_output": "0"
+  },
+  "TC30": {
+    "input": "24\n300",
+    "expected_output": "0"
+  },
+  "TC31": {
+    "input": "30\n400",
+    "expected_output": "0"
+  },
+  "TC32": {
+    "input": "15\n100",
+    "expected_output": "0"
+  },
+  "TC33": {
+    "input": "10\n500",
+    "expected_output": "0"
+  },
+  "TC34": {
+    "input": "5\n600",
+    "expected_output": "100"
+  },
+  "TC35": {
+    "input": "4\n1000",
+    "expected_output": "1000"
+  },
+  "TC36": {
+    "input": "9\n4900",
+    "expected_output": "4400"
+  },
+  "TC37": {
+    "input": "10\n4900",
+    "expected_output": "4400"
+  },
+  "TC38": {
+    "input": "14\n5100",
+    "expected_output": "4590"
+  },
+  "TC39": {
+    "input": "15\n5100",
+    "expected_output": "3100"
+  },
+  "TC40": {
+    "input": "19\n10000",
+    "expected_output": "8000"
+  },
+  "TC41": {
+    "input": "20\n10000",
+    "expected_output": "7500"
+  },
+  "TC42": {
+    "input": "30\n15000",
+    "expected_output": "11250"
+  },
+  "TC43": {
+    "input": "25\n20000",
+    "expected_output": "15000"
+  },
+  "TC44": {
+    "input": "15\n30000",
+    "expected_output": "27000"
+  },
+  "TC45": {
+    "input": "19\n40000",
+    "expected_output": "36000"
+  },
+  "TC46": {
+    "input": "20\n40000",
+    "expected_output": "30000"
+  },
+  "TC47": {
+    "input": "30\n49900",
+    "expected_output": "37425"
+  },
+  "TC48": {
+    "input": "20\n49900",
+    "expected_output": "37425"
+  },
+  "TC49": {
+    "input": "10\n10000",
+    "expected_output": "9000"
+  },
+  "TC50": {
+    "input": "14\n10000",
+    "expected_output": "9000"
+  }
+}

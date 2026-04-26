@@ -1,0 +1,202 @@
+{
+  "TC1": {
+    "input": "1\nC\nA",
+    "expected_output": "0"
+  },
+  "TC2": {
+    "input": "5\nI A I S S\nS",
+    "expected_output": "2"
+  },
+  "TC3": {
+    "input": "1\nA\nA",
+    "expected_output": "1"
+  },
+  "TC4": {
+    "input": "2\nC S\nI",
+    "expected_output": "0"
+  },
+  "TC5": {
+    "input": "3\nI I I\nI",
+    "expected_output": "3"
+  },
+  "TC6": {
+    "input": "4\nA C S I\nA",
+    "expected_output": "1"
+  },
+  "TC7": {
+    "input": "4\nA C S I\nC",
+    "expected_output": "1"
+  },
+  "TC8": {
+    "input": "4\nA C S I\nS",
+    "expected_output": "1"
+  },
+  "TC9": {
+    "input": "4\nA C S I\nI",
+    "expected_output": "1"
+  },
+  "TC10": {
+    "input": "5\nC C S S A\nA",
+    "expected_output": "1"
+  },
+  "TC11": {
+    "input": "10\nC C C C C C C C C C\nC",
+    "expected_output": "10"
+  },
+  "TC12": {
+    "input": "10\nS S S S S S S S S S\nS",
+    "expected_output": "10"
+  },
+  "TC13": {
+    "input": "10\nI I I I I I I I I I\nI",
+    "expected_output": "10"
+  },
+  "TC14": {
+    "input": "10\nA A A A A A A A A A\nA",
+    "expected_output": "10"
+  },
+  "TC15": {
+    "input": "10\nC C C C C C C C C C\nA",
+    "expected_output": "0"
+  },
+  "TC16": {
+    "input": "10\nS S S S S S S S S S\nC",
+    "expected_output": "0"
+  },
+  "TC17": {
+    "input": "10\nI I I I I I I I I I\nS",
+    "expected_output": "0"
+  },
+  "TC18": {
+    "input": "10\nA A A A A A A A A A\nI",
+    "expected_output": "0"
+  },
+  "TC19": {
+    "input": "15\nS S I I C C A A S S I I C C A\nS",
+    "expected_output": "4"
+  },
+  "TC20": {
+    "input": "15\nS S I I C C A A S S I I C C A\nC",
+    "expected_output": "4"
+  },
+  "TC21": {
+    "input": "20\nA C A C A C A C A C A C A C A C A C A C\nA",
+    "expected_output": "10"
+  },
+  "TC22": {
+    "input": "20\nS I S I S I S I S I S I S I S I S I S I\nS",
+    "expected_output": "10"
+  },
+  "TC23": {
+    "input": "8\nC A S I C A S I\nC",
+    "expected_output": "2"
+  },
+  "TC24": {
+    "input": "7\nI A C S I A C\nI",
+    "expected_output": "2"
+  },
+  "TC25": {
+    "input": "1\nS\nS",
+    "expected_output": "1"
+  },
+  "TC26": {
+    "input": "1\nI\nS",
+    "expected_output": "0"
+  },
+  "TC27": {
+    "input": "11\nA S I C A S I C A S I\nA",
+    "expected_output": "3"
+  },
+  "TC28": {
+    "input": "12\nC C C S S S I I I A A A\nC",
+    "expected_output": "3"
+  },
+  "TC29": {
+    "input": "12\nC C C S S S I I I A A A\nS",
+    "expected_output": "3"
+  },
+  "TC30": {
+    "input": "12\nC C C S S S I I I A A A\nI",
+    "expected_output": "3"
+  },
+  "TC31": {
+    "input": "12\nC C C S S S I I I A A A\nA",
+    "expected_output": "3"
+  },
+  "TC32": {
+    "input": "20\nA A A A C C C C S S S S I I I I A A A A\nA",
+    "expected_output": "8"
+  },
+  "TC33": {
+    "input": "20\nA A A A C C C C S S S S I I I I A A A A\nC",
+    "expected_output": "4"
+  },
+  "TC34": {
+    "input": "20\nA A A A C C C C S S S S I I I I A A A A\nS",
+    "expected_output": "4"
+  },
+  "TC35": {
+    "input": "20\nA A A A C C C C S S S S I I I I A A A A\nI",
+    "expected_output": "4"
+  },
+  "TC36": {
+    "input": "14\nS C I A S C I A S C I A S C\nI",
+    "expected_output": "3"
+  },
+  "TC37": {
+    "input": "14\nS C I A S C I A S C I A S C\nA",
+    "expected_output": "3"
+  },
+  "TC38": {
+    "input": "9\nC C C C C C C C S\nS",
+    "expected_output": "1"
+  },
+  "TC39": {
+    "input": "9\nI I I I I I I I A\nI",
+    "expected_output": "8"
+  },
+  "TC40": {
+    "input": "13\nA C S I A C S I A C S I A\nS",
+    "expected_output": "3"
+  },
+  "TC41": {
+    "input": "50\nC C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C\nC",
+    "expected_output": "50"
+  },
+  "TC42": {
+    "input": "50\nA A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A\nI",
+    "expected_output": "0"
+  },
+  "TC43": {
+    "input": "30\nC S I A C S I A C S I A C S I A C S I A C S I A C S I A C S\nC",
+    "expected_output": "8"
+  },
+  "TC44": {
+    "input": "30\nC S I A C S I A C S I A C S I A C S I A C S I A C S I A C S\nS",
+    "expected_output": "8"
+  },
+  "TC45": {
+    "input": "30\nC S I A C S I A C S I A C S I A C S I A C S I A C S I A C S\nI",
+    "expected_output": "7"
+  },
+  "TC46": {
+    "input": "30\nC S I A C S I A C S I A C S I A C S I A C S I A C S I A C S\nA",
+    "expected_output": "7"
+  },
+  "TC47": {
+    "input": "25\nC C C C C C C C C C C C S S S S S S S S S S S S S\nC",
+    "expected_output": "12"
+  },
+  "TC48": {
+    "input": "25\nC C C C C C C C C C C C S S S S S S S S S S S S S\nS",
+    "expected_output": "13"
+  },
+  "TC49": {
+    "input": "40\nC S I A C S I A C S I A C S I A C S I A C S I A C S I A C S I A C S I A C S I A\nI",
+    "expected_output": "10"
+  },
+  "TC50": {
+    "input": "100\nA A A A A A A A A A A A A A A A A A A A A A A A A C C C C C C C C C C C C C C C C C C C C C C C C C S S S S S S S S S S S S S S S S S S S S S S S S S I I I I I I I I I I I I I I I I I I I I I I I I I\nA",
+    "expected_output": "25"
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "TC1": {
+    "input": "5\n0 0 0 0 0",
+    "expected_output": "-15"
+  },
+  "TC2": {
+    "input": "6\n1 1 0 0 1 0",
+    "expected_output": "5"
+  },
+  "TC3": {
+    "input": "1\n1",
+    "expected_output": "1"
+  },
+  "TC4": {
+    "input": "1\n0",
+    "expected_output": "-1"
+  },
+  "TC5": {
+    "input": "2\n1 1",
+    "expected_output": "3"
+  },
+  "TC6": {
+    "input": "2\n0 0",
+    "expected_output": "-3"
+  },
+  "TC7": {
+    "input": "2\n1 0",
+    "expected_output": "1"
+  },
+  "TC8": {
+    "input": "2\n0 1",
+    "expected_output": "-1"
+  },
+  "TC9": {
+    "input": "3\n1 1 1",
+    "expected_output": "6"
+  },
+  "TC10": {
+    "input": "3\n0 1 0",
+    "expected_output": "-2"
+  },
+  "TC11": {
+    "input": "3\n1 0 1",
+    "expected_output": "2"
+  },
+  "TC12": {
+    "input": "4\n1 0 1 0",
+    "expected_output": "2"
+  },
+  "TC13": {
+    "input": "4\n0 1 0 1",
+    "expected_output": "-2"
+  },
+  "TC14": {
+    "input": "4\n1 1 0 0",
+    "expected_output": "4"
+  },
+  "TC15": {
+    "input": "4\n0 0 1 1",
+    "expected_output": "-4"
+  },
+  "TC16": {
+    "input": "5\n1 1 1 1 1",
+    "expected_output": "15"
+  },
+  "TC17": {
+    "input": "5\n1 1 1 1 0",
+    "expected_output": "13"
+  },
+  "TC18": {
+    "input": "5\n0 1 1 1 1",
+    "expected_output": "5"
+  },
+  "TC19": {
+    "input": "6\n1 0 0 0 0 1",
+    "expected_output": "-7"
+  },
+  "TC20": {
+    "input": "6\n0 1 1 1 1 0",
+    "expected_output": "7"
+  },
+  "TC21": {
+    "input": "7\n1 0 1 0 1 0 1",
+    "expected_output": "4"
+  },
+  "TC22": {
+    "input": "7\n0 1 0 1 0 1 0",
+    "expected_output": "-4"
+  },
+  "TC23": {
+    "input": "8\n1 1 1 1 0 0 0 0",
+    "expected_output": "16"
+  },
+  "TC24": {
+    "input": "8\n0 0 0 0 1 1 1 1",
+    "expected_output": "-16"
+  },
+  "TC25": {
+    "input": "9\n1 1 0 1 1 0 1 1 0",
+    "expected_output": "21"
+  },
+  "TC26": {
+    "input": "9\n0 0 1 0 0 1 0 0 1",
+    "expected_output": "-21"
+  },
+  "TC27": {
+    "input": "10\n1 0 1 0 1 0 1 0 1 0",
+    "expected_output": "5"
+  },
+  "TC28": {
+    "input": "10\n0 1 0 1 0 1 0 1 0 1",
+    "expected_output": "-5"
+  },
+  "TC29": {
+    "input": "10\n1 1 1 1 1 0 0 0 0 0",
+    "expected_output": "25"
+  },
+  "TC30": {
+    "input": "10\n0 0 0 0 0 1 1 1 1 1",
+    "expected_output": "-25"
+  },
+  "TC31": {
+    "input": "10\n1 1 1 1 1 1 1 1 1 1",
+    "expected_output": "55"
+  },
+  "TC32": {
+    "input": "10\n0 0 0 0 0 0 0 0 0 0",
+    "expected_output": "-55"
+  },
+  "TC33": {
+    "input": "11\n1 1 1 0 0 0 1 1 1 0 0",
+    "expected_output": "18"
+  },
+  "TC34": {
+    "input": "11\n0 0 0 1 1 1 0 0 0 1 1",
+    "expected_output": "-18"
+  },
+  "TC35": {
+    "input": "12\n1 0 0 1 0 0 1 0 0 1 0 0",
+    "expected_output": "-18"
+  },
+  "TC36": {
+    "input": "12\n0 1 1 0 1 1 0 1 1 0 1 1",
+    "expected_output": "18"
+  },
+  "TC37": {
+    "input": "15\n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+    "expected_output": "120"
+  },
+  "TC38": {
+    "input": "15\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+    "expected_output": "-120"
+  },
+  "TC39": {
+    "input": "15\n1 0 1 0 1 0 1 0 1 0 1 0 1 0 1",
+    "expected_output": "8"
+  },
+  "TC40": {
+    "input": "15\n0 1 0 1 0 1 0 1 0 1 0 1 0 1 0",
+    "expected_output": "-8"
+  },
+  "TC41": {
+    "input": "20\n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+    "expected_output": "210"
+  },
+  "TC42": {
+    "input": "20\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+    "expected_output": "-210"
+  },
+  "TC43": {
+    "input": "20\n1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0",
+    "expected_output": "100"
+  },
+  "TC44": {
+    "input": "20\n0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1",
+    "expected_output": "-100"
+  },
+  "TC45": {
+    "input": "25\n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+    "expected_output": "325"
+  },
+  "TC46": {
+    "input": "25\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+    "expected_output": "-325"
+  },
+  "TC47": {
+    "input": "30\n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+    "expected_output": "465"
+  },
+  "TC48": {
+    "input": "30\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+    "expected_output": "-465"
+  },
+  "TC49": {
+    "input": "50\n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+    "expected_output": "625"
+  },
+  "TC50": {
+    "input": "50\n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+    "expected_output": "-625"
+  }
+}

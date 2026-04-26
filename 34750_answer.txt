@@ -1,0 +1,202 @@
+{
+  "TC1": {
+    "input": "200000",
+    "expected_output": "20000 180000"
+  },
+  "TC2": {
+    "input": "800000",
+    "expected_output": "120000 680000"
+  },
+  "TC3": {
+    "input": "50000",
+    "expected_output": "2500 47500"
+  },
+  "TC4": {
+    "input": "60000",
+    "expected_output": "3000 57000"
+  },
+  "TC5": {
+    "input": "70000",
+    "expected_output": "3500 66500"
+  },
+  "TC6": {
+    "input": "80000",
+    "expected_output": "4000 76000"
+  },
+  "TC7": {
+    "input": "90000",
+    "expected_output": "4500 85500"
+  },
+  "TC8": {
+    "input": "100000",
+    "expected_output": "10000 90000"
+  },
+  "TC9": {
+    "input": "110000",
+    "expected_output": "11000 99000"
+  },
+  "TC10": {
+    "input": "120000",
+    "expected_output": "12000 108000"
+  },
+  "TC11": {
+    "input": "150000",
+    "expected_output": "15000 135000"
+  },
+  "TC12": {
+    "input": "250000",
+    "expected_output": "25000 225000"
+  },
+  "TC13": {
+    "input": "300000",
+    "expected_output": "30000 270000"
+  },
+  "TC14": {
+    "input": "350000",
+    "expected_output": "35000 315000"
+  },
+  "TC15": {
+    "input": "400000",
+    "expected_output": "40000 360000"
+  },
+  "TC16": {
+    "input": "450000",
+    "expected_output": "45000 405000"
+  },
+  "TC17": {
+    "input": "480000",
+    "expected_output": "48000 432000"
+  },
+  "TC18": {
+    "input": "490000",
+    "expected_output": "49000 441000"
+  },
+  "TC19": {
+    "input": "500000",
+    "expected_output": "75000 425000"
+  },
+  "TC20": {
+    "input": "510000",
+    "expected_output": "76500 433500"
+  },
+  "TC21": {
+    "input": "550000",
+    "expected_output": "82500 467500"
+  },
+  "TC22": {
+    "input": "600000",
+    "expected_output": "90000 510000"
+  },
+  "TC23": {
+    "input": "650000",
+    "expected_output": "97500 552500"
+  },
+  "TC24": {
+    "input": "700000",
+    "expected_output": "105000 595000"
+  },
+  "TC25": {
+    "input": "750000",
+    "expected_output": "112500 637500"
+  },
+  "TC26": {
+    "input": "850000",
+    "expected_output": "127500 722500"
+  },
+  "TC27": {
+    "input": "900000",
+    "expected_output": "135000 765000"
+  },
+  "TC28": {
+    "input": "950000",
+    "expected_output": "142500 807500"
+  },
+  "TC29": {
+    "input": "980000",
+    "expected_output": "147000 833000"
+  },
+  "TC30": {
+    "input": "990000",
+    "expected_output": "148500 841500"
+  },
+  "TC31": {
+    "input": "1000000",
+    "expected_output": "200000 800000"
+  },
+  "TC32": {
+    "input": "1010000",
+    "expected_output": "202000 808000"
+  },
+  "TC33": {
+    "input": "1100000",
+    "expected_output": "220000 880000"
+  },
+  "TC34": {
+    "input": "1500000",
+    "expected_output": "300000 1200000"
+  },
+  "TC35": {
+    "input": "2000000",
+    "expected_output": "400000 1600000"
+  },
+  "TC36": {
+    "input": "2500000",
+    "expected_output": "500000 2000000"
+  },
+  "TC37": {
+    "input": "3000000",
+    "expected_output": "600000 2400000"
+  },
+  "TC38": {
+    "input": "3500000",
+    "expected_output": "700000 2800000"
+  },
+  "TC39": {
+    "input": "4000000",
+    "expected_output": "800000 3200000"
+  },
+  "TC40": {
+    "input": "4500000",
+    "expected_output": "900000 3600000"
+  },
+  "TC41": {
+    "input": "5000000",
+    "expected_output": "1000000 4000000"
+  },
+  "TC42": {
+    "input": "5500000",
+    "expected_output": "1100000 4400000"
+  },
+  "TC43": {
+    "input": "6000000",
+    "expected_output": "1200000 4800000"
+  },
+  "TC44": {
+    "input": "7000000",
+    "expected_output": "1400000 5600000"
+  },
+  "TC45": {
+    "input": "8000000",
+    "expected_output": "1600000 6400000"
+  },
+  "TC46": {
+    "input": "9000000",
+    "expected_output": "1800000 7200000"
+  },
+  "TC47": {
+    "input": "9500000",
+    "expected_output": "1900000 7600000"
+  },
+  "TC48": {
+    "input": "9900000",
+    "expected_output": "1980000 7920000"
+  },
+  "TC49": {
+    "input": "9990000",
+    "expected_output": "1998000 7992000"
+  },
+  "TC50": {
+    "input": "10000000",
+    "expected_output": "2000000 8000000"
+  }
+}
